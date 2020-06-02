@@ -1,0 +1,48 @@
+.parent{
+    min-height: 900px;
+ }
+ .imageClass{
+    width:200px;
+    height:200px;
+ }
+ .container{
+     width: 100%;
+ }
+ /* .vertical-align{
+     display: flex;
+     align-items: center;
+ }
+ 
+ .details li {
+     list-style: none;
+   }
+   li {
+       margin-bottom:10px;
+       
+   } */
+ 
+ .card-body {
+     height: 300px;
+ 
+ }
+ 
+ .delBtn, .editBtn  {
+    width: 50%;
+    margin: 10px;
+ }
+ .btnCreate{
+    margin: auto auto 10px auto;
+ }
+
+ a{
+    text-decoration: none;
+    color: black;
+    
+ }
+ .pagination{
+     margin-top: 20px;
+     bottom: 0;
+ }
+ .SearchValue{
+     color:white;
+ }
