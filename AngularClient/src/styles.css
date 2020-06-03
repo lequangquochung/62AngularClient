@@ -16,3 +16,10 @@ body{
     background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
     background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
 }
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #f44336;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #f44336;
+}

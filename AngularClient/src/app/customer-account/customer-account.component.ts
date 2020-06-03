@@ -99,8 +99,8 @@ export class CustomerAccountComponent extends FormComponentBase implements OnIni
         Validators.required,
         Validators.email]],
       phone_number: ['', [Validators.required,
-      Validators.minLength(9),  
-      Validators.pattern("^[0-9\-\+]{9,12}$")]],
+      Validators.minLength(10),  
+      Validators.pattern("^[0-9\-\+]{10,12}$")]],
       description: ['', Validators.required],
       job_id: [1],
       imgUrl: []

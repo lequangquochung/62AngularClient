@@ -9,6 +9,7 @@ import { Job } from './../Models/job.model';
 
 //services
 import { JobService } from './../shared/job.service';
+import {ReportService} from '../shared/report.service';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material/';
 
 
@@ -18,30 +19,38 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material/';
   styleUrls: ['./job-list.component.css']
 })
 export class JobListComponent implements OnInit {
-  job: Job;
+  job: Job[] = [];
 
   ELEMENT_DATA: Job[];
-  displayedColumns: string[] = ['job_code', 'job_name', 'job_description', 'totalCustomer','job_id'];
-  
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator;
+  displayedColumns: string[] = [
+    'job_code', 
+    'job_name', 
+    'job_description', 
+    'totalCustomer', 
+    'job_id'];
+
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   // dataSource = new MatTableDataSource<Job>(this.ELEMENT_DATA);
- 
+
   dataSource = new MatTableDataSource<Job>(this.ELEMENT_DATA);
 
   constructor(private jobService: JobService,
+    private reportService: ReportService,
     private location: Location) { }
 
   ngOnInit() {
     this.jobService.getJobList().subscribe(
-      Subdata => this.dataSource.data = Subdata as Job[]
-    );
+      Subdata => {this.dataSource.data = Subdata as Job[],
+      console.log(Subdata)});
+    
+    
 
-    this.dataSource.sort=this.sort;
+    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  deleteJob(job_id) {
+  deleteJob(job_id) {  
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -54,23 +63,22 @@ export class JobListComponent implements OnInit {
       if (result.value) {
         Swal.fire(
           'Deleted!',
-          'Your file has been deleted!',
+          'Your file has been deleted!',  
           'success'
-        ),
-        this.jobService.deleteJob(job_id).subscribe(
-          (data) => { console.log(data) }
-        );
-          this.ngOnInit();
+        ),this.jobService.deleteJob(job_id).subscribe(data => {this.ngOnInit();});
+          
       }
-    })
-    
-   
+    })  
   }
 
-  apllyFilter(filterValue: string){
+  getReportCusTomer () {
+    this.reportService.getReportCusTomer().subscribe();
+  }
+
+  apllyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
+
 
   cancel(): void {
     Swal.fire({
@@ -97,3 +105,4 @@ export class JobListComponent implements OnInit {
   }
 
 }
+

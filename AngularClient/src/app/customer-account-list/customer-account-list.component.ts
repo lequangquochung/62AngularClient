@@ -45,7 +45,8 @@ export class CustomerAccountListComponent implements OnInit {
 
   ngOnInit() {
     this.customerAccountService.getCustomerList().subscribe(
-      customer => this.dataSource.data = customer as Customer[]
+      customer => {this.dataSource.data = customer as Customer[],
+      console.log(customer)}
     );
     this.dataSource.sort=this.sort;
     this.dataSource.paginator = this.paginator;
@@ -66,20 +67,17 @@ export class CustomerAccountListComponent implements OnInit {
           'Deleted!',
           'Your file has been deleted!',
           'success'
-        ),this.customerAccountService.deleteCustomter(customer_id).subscribe();      
-          this.ngOnInit();
+        ),this.customerAccountService.deleteCustomter(customer_id).subscribe(
+          data=> {
+            this.ngOnInit()
+          });    
       }
-    })  
-    
+    }); 
   }
 
   apllyFilter(filterValue: string){
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
-
-  
-
 
 
   goBack(): void {

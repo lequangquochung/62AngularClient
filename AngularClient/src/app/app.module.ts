@@ -32,6 +32,7 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobEditComponent } from './job-edit/job-edit.component';
 
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -42,7 +43,8 @@ import { JobEditComponent } from './job-edit/job-edit.component';
       JobCreateComponent,
       JobDetailComponent,
       JobListComponent,
-      JobEditComponent
+      JobEditComponent,
+    
    ],
    imports: [
       BrowserModule,
@@ -68,6 +70,8 @@ import { JobEditComponent } from './job-edit/job-edit.component';
    bootstrap: [
       AppComponent
    ],
-   entryComponents: [CustomerAccountComponent]
+   entryComponents: [
+      CustomerAccountComponent
+   ]
 })
 export class AppModule { }

@@ -4,7 +4,8 @@ i{
 
 .container{
   padding: 0;
-  margin-top: 50px;
+  margin-top: 100px;
+ 
 }
 .card{
   -webkit-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
@@ -32,5 +33,9 @@ box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
   object-fit: cover;
 }
 .editBtn{
-  margin-left: 10px ;
+  padding-right: 5px ;
+}
+
+.btnGroup{
+  margin-left: -25px;
 }

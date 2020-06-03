@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 //model
 import { Customer } from '../Models/customer.model';
 import { Job } from './../Models/job.model';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 //service
 import { JobService } from '../shared/job.service';
@@ -25,7 +26,8 @@ export class JobCreateComponent implements OnInit {
   constructor(private jobService: JobService,
               private customerAccountService: CustomerAccountService,
               private location: Location,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder,
+              private router: Router) { }
 
   ngOnInit() {
     this.jobForm = this.fb.group({
@@ -49,8 +51,8 @@ export class JobCreateComponent implements OnInit {
       (data) => { console.log(data) }
     );
     console.log(job);
-    this.successfully();   
-    this.jobForm.reset();
+    this.confirmRedirect();   
+    
   }
 
   goBack(): void {
@@ -64,6 +66,26 @@ export class JobCreateComponent implements OnInit {
       icon: 'success',
       title: 'Successfully !',
       text: 'Created Successfully !',
+    })
+  }
+
+  confirmRedirect():void{
+    Swal.fire({
+      title: 'Success',      
+      icon: 'success',
+      showCancelButton: true,
+      confirmButtonColor: '#FF7F50',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Back To List',
+      cancelButtonText: 'Continue'
+    }).then((result) => {
+      if (result.value) {
+        this.router.navigate(['/joblist']);
+      }
+      else{
+        this.jobForm.reset();
+        return;
+      }
     })
   }
 

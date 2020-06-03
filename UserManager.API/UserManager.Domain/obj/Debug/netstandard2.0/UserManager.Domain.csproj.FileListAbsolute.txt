@@ -1,0 +1,9 @@
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\bin\Debug\netstandard2.0\UserManager.Domain.deps.json
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\bin\Debug\netstandard2.0\UserManager.Domain.dll
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\bin\Debug\netstandard2.0\UserManager.Domain.pdb
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.csproj.CoreCompileInputs.cache
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.AssemblyInfoInputs.cache
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.AssemblyInfo.cs
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.dll
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.pdb
+C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.csprojAssemblyReference.cache

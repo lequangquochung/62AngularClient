@@ -12,8 +12,9 @@ table {
 }
 
 /* Custom */
-.container {
+.container-fluid {
     margin-top: 30px;
+    width: 80%;
 }
 .employee-search-field, mat-label{
     color: black;
