@@ -7,3 +7,12 @@ C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netst
 C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.dll
 C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.pdb
 C:\Users\hunglqq\source\repos\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.csprojAssemblyReference.cache
+C:\Me\MP\UserManager.API\UserManager.Domain\bin\Debug\netstandard2.0\UserManager.Domain.deps.json
+C:\Me\MP\UserManager.API\UserManager.Domain\bin\Debug\netstandard2.0\UserManager.Domain.dll
+C:\Me\MP\UserManager.API\UserManager.Domain\bin\Debug\netstandard2.0\UserManager.Domain.pdb
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.csprojAssemblyReference.cache
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.csproj.CoreCompileInputs.cache
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.AssemblyInfoInputs.cache
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.AssemblyInfo.cs
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.dll
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Debug\netstandard2.0\UserManager.Domain.pdb

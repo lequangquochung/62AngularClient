@@ -1,7 +1,8 @@
 import { Customer } from './../Models/customer.model';
 import { CustomerAccountService } from './../shared/customer-account.service';
-import { Component, OnInit, Input,ViewChild } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import {ActivatedRoute, NavigationExtras} from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import Swal from 'sweetalert2';
 //model
@@ -19,8 +20,10 @@ import { JobService } from './../shared/job.service';
 })
 export class CustomerDetailComponent implements OnInit {  
   @Input() customer: Customer
+  @Output() DeletedId = new EventEmitter<number>();
   // customer: Customer;
   constructor(  private route: ActivatedRoute,
+                private router: Router,
                 private location: Location,
                 private customerAccountService: CustomerAccountService,
                 private jobService: JobService) { }
@@ -52,6 +55,13 @@ export class CustomerDetailComponent implements OnInit {
           'Your file has been deleted!',
           'success'
         ), this.customerAccountService.deleteCustomter(customer_id).subscribe();
+        let navigationExtra: NavigationExtras = {
+          queryParams : {
+            "deletedId":customer_id
+          }
+        }
+        // this.router.navigate(['/listcustomer'],navigationExtra);
+        this.goBack();
         this.ngOnInit();
       }
     }) 
@@ -73,7 +83,7 @@ export class CustomerDetailComponent implements OnInit {
           'Deleted!',
           'Your file has been deleted!',
           'success'
-        ),
+        ),          
           
           this.ngOnInit();
       }

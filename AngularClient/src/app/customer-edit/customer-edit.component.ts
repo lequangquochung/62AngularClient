@@ -39,31 +39,34 @@ export class CustomerEditComponent extends FormComponentBase implements OnInit, 
     this.validationMessages = {
       first_name: {
         required: 'First Name is required.',
-        minlength: 'First Name minimum length is 6.',
-        pattern: 'First Name minimum length 6, no special character !@#$%^&* no spaces.'
+        minlength: 'First Name minimum length is 2.',
+        pattern: 'First Name minimum length 2, no special character.'
       },
       last_name: {
         required: 'Last Name is required.',
-        minlength: 'Last Name minimum length is 6.',
-        pattern: 'Last Name  minimum length 6, no special character !@#$%^&* no spaces.'
+        minlength: 'Last Name minimum length is 2.',
+        pattern: 'Last Name  minimum length 2, no special character.'
       },
       address: {
+        minlength: 'Last Name minimum length is 2.',
         required: 'Address is required.'
       },
       city: {
+        minlength: 'Last Name minimum length is 2.',
         required: 'City is required.'
       },
       email: {
         required: 'Email is required.',
-        email: 'Email is not properly formatted.',
+        pattern: 'Email is not properly formatted.',
       },
       phone_number: {
         required: 'Phone number is required.',
         minlength: 'Phone number minimum length is 9.',
-        maxlength: 'Phone number maximum length is 12.',
+        maxlength: 'Phone number maximum length is 12',
         pattern: 'Phone number minimum length 9, numbers only. No spaces.'
       },
       description: {
+        minlength: 'Description minimum length is 2.',
         required: 'Description is required.'
       }
     };
@@ -82,23 +85,55 @@ export class CustomerEditComponent extends FormComponentBase implements OnInit, 
     this.customerForm = this.fb.group({
       customer_id: ['', Validators.required],
       first_name: ['',
-        [Validators.required,
-        Validators.minLength(2),
-        Validators.pattern('^[a-zA-Z0-9]*$')]],
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern('^[a-zA-Z0-9]*$')
+        ]
+      ],
       last_name: ['',
-        [Validators.required,
-        Validators.minLength(2),
-        Validators.pattern('^[a-zA-Z0-9]*$')]],
-      gender: ['Male'],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      email: ['', [
-        Validators.required,
-        Validators.email]],
-      phone_number: ['', [Validators.required,
-      Validators.minLength(10),  
-      Validators.pattern("^[0-9\-\+]{10,12}$")]],
-      description: ['', Validators.required],
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern('^[a-zA-Z0-9]*$')
+        ]
+      ],
+      gender: ['',
+        [
+          Validators.required
+        ]
+
+      ],
+      address: ['',
+        [
+          Validators.required
+        ]
+      ],
+      city: ['',
+        [
+          Validators.required
+        ]
+      ],
+      email: ['',
+        [
+          Validators.required,
+          Validators.email
+        ]
+      ],
+      phone_number: ['',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(11),
+          Validators.pattern("^[0-9\-\+]{10,12}$")
+        ]
+      ],
+      description: ['',
+        [
+          Validators.required,
+          Validators.minLength(2)
+        ]
+      ],
       job_id: [1],
       imgUrl: []
     });
@@ -109,15 +144,64 @@ export class CustomerEditComponent extends FormComponentBase implements OnInit, 
     console.log(`this.route.snapshot.paramMap = ${JSON.stringify(this.route.snapshot.paramMap)}`);
     this.customerAccountService.getCustomerById(customer_id).subscribe((customer) => {
       this.customerForm = this.fb.group({
-        customer_id: [customer.customer_id, Validators.required],
-        first_name: [customer.first_name, Validators.required],
-        last_name: [customer.last_name, Validators.required],
+        customer_id: [
+          customer.customer_id,
+          Validators.required
+        ],
+        first_name: [
+          customer.first_name,
+          [
+            Validators.required,
+            Validators.minLength(2),
+            Validators.pattern('^[a-zA-Z]*$')
+          ]
+        ],
+        last_name: [
+          customer.last_name,
+          [
+            Validators.required,
+            Validators.minLength(2),
+            Validators.pattern('^[a-zA-Z]*$')
+          ]
+        ],
         gender: ['Male'],
-        address: [customer.address, Validators.required],
-        city: [customer.city, Validators.required],
-        email: [customer.email, Validators.required],
-        phone_number: [customer.phone_number, Validators.required],
-        description: [customer.description, Validators.required],
+        address: [
+          customer.address,
+          [
+            Validators.required,
+            Validators.minLength(2)
+          ]
+        ],
+        city: [
+          customer.city,
+          [
+            Validators.required,
+            Validators.minLength(2)
+          ]
+        ],
+        email: [
+          customer.email,
+          [
+            Validators.required,
+            Validators.email,
+            Validators.pattern("^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$")
+          ]
+        ],
+        phone_number: [
+          customer.phone_number,
+          [
+            Validators.required,
+            Validators.minLength(10),
+            Validators.pattern("^[0-9\-\+]{10,12}$")
+          ]
+        ],
+        description: [
+          customer.description,
+          [
+            Validators.required,
+            Validators.minLength(2)
+          ]
+        ],
         job_id: [1],
         imgUrl: [customer.imgUrl]
       });
@@ -133,7 +217,7 @@ export class CustomerEditComponent extends FormComponentBase implements OnInit, 
   }
 
   onFormSubmit() {
-    
+
     let customer = this.customerForm.value;
     if (this.urlImage) {
       customer.imgUrl = this.urlImage;
@@ -152,7 +236,7 @@ export class CustomerEditComponent extends FormComponentBase implements OnInit, 
       text: 'Updated Successfully !',
     })
   }
-  deleteCustomer(customer_id) {  
+  deleteCustomer(customer_id) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -167,11 +251,11 @@ export class CustomerEditComponent extends FormComponentBase implements OnInit, 
           'Deleted!',
           'Your file has been deleted!',
           'success'
-        ),this.customerAccountService.deleteCustomter(customer_id).subscribe();      
-          this.ngOnInit();
+        ), this.customerAccountService.deleteCustomter(customer_id).subscribe();
+        this.ngOnInit();
       }
-    })  
-    
+    })
+
   }
 
   ngAfterViewInit(): void {

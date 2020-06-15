@@ -1,5 +1,5 @@
 import { Customer } from './../Models/customer.model';
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material/';
@@ -9,6 +9,7 @@ import { Job } from './../Models/job.model';
 //service
 import { JobService } from '../shared/job.service';
 import { CustomerAccountService } from '../shared/customer-account.service';
+import {ReportService} from '../shared/report.service';
 
 @Component({
   selector: 'app-job-detail',
@@ -17,7 +18,7 @@ import { CustomerAccountService } from '../shared/customer-account.service';
 })
 export class JobDetailComponent implements OnInit {
   @Input() job: Job
-
+ 
   customer: Customer;
 
   ELEMENT_DATA: Customer[];
@@ -41,7 +42,12 @@ export class JobDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private location: Location,
     private jobService: JobService,
-    private customerAccountService: CustomerAccountService) { }
+    private reportService: ReportService,
+    private customerAccountService: CustomerAccountService) {
+      this.route.queryParams.subscribe(params => {
+        this.ngOnInit();
+      })
+     }
 
   ngOnInit() {
     this.getJobById();
@@ -50,6 +56,10 @@ export class JobDetailComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
+
+  // this.route.queryParams.subscribe(params => {
+  //   this.ngOnInit();
+  // })
 
   getJobById(): void {
     // const customer_id = +this.route.snapshot.params.get('customer_id');
@@ -81,36 +91,45 @@ export class JobDetailComponent implements OnInit {
           'Deleted!',
           'Your file has been deleted!',
           'success'
-        ), this.customerAccountService.deleteCustomter(customer_id).subscribe();
-        this.ngOnInit();
+        ), this.customerAccountService.deleteCustomter(customer_id).subscribe(
+          data => {this.ngOnInit()}
+        );
+        this.goBack();
+        
       }
     })
   }
 
-  deleteJob(job_id) {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.value) {
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted!',
-          'success'
-        ),
-          this.jobService.deleteJob(job_id).subscribe(
-            (data) => { console.log(data) }
-          );
-        this.ngOnInit();
-      }
-    })
+  // deleteJob(job_id) {
+  //   Swal.fire({
+  //     title: 'Are you sure?',
+  //     text: "You won't be able to revert this!",
+  //     icon: 'warning',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#3085d6',
+  //     cancelButtonColor: '#d33',
+  //     confirmButtonText: 'Yes, delete it!'
+  //   }).then((result) => {
+  //     if (result.value) {
+  //       Swal.fire(
+  //         'Deleted!',
+  //         'Your file has been deleted!',
+  //         'success'
+  //       ),
+  //         this.jobService.deleteJob(job_id).subscribe(
+  //           (data) => { console.log(data) }
+  //         );
+  //       // this.ngOnInit();
+  //       this.goBack();
+  //     }
+  //   })
+  // }
 
-
+  getReportCusTomerByJob(){
+    const job_id = +this.route.snapshot.paramMap.get('job_id');
+    this.reportService.getReportCusTomerByJob(job_id).subscribe(
+      data => {window.open(data)}
+      );
   }
 
   apllyFilter(filterValue: string) {

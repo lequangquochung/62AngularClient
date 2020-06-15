@@ -9,5 +9,5 @@ export class Customer {
     phone_number: string;
     description: string;
     job_name: string;
-    imgUrl : string;
+    imgUrl: string;
 }

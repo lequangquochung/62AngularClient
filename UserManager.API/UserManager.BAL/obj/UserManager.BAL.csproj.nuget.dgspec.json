@@ -1,0 +1,325 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj": {}
+  },
+  "projects": {
+    "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj",
+        "projectName": "UserManager.BAL.Interface",
+        "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj",
+        "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
+        "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hunglqq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj": {
+                "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj",
+        "projectName": "UserManager.BAL",
+        "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj",
+        "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
+        "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hunglqq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj": {
+                "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj"
+              },
+              "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj": {
+                "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj",
+        "projectName": "UserManager.DAL.Interface",
+        "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj",
+        "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
+        "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hunglqq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj": {
+                "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj",
+        "projectName": "UserManager.DAL",
+        "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj",
+        "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
+        "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hunglqq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj": {
+                "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj",
+        "projectName": "UserManager.Domain",
+        "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj",
+        "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
+        "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hunglqq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

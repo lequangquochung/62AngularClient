@@ -40,23 +40,25 @@ export class CustomerAccountComponent extends FormComponentBase implements OnIni
     this.validationMessages = {
       first_name: {
         required: 'First Name is required.',
-        minlength: 'First Name minimum length is 6.',
-        pattern: 'First Name minimum length 6, no special character !@#$%^&* no spaces.'
+        minlength: 'First Name minimum length is 2.',
+        pattern: 'First Name minimum length 2, no special character.'
       },
       last_name: {
         required: 'Last Name is required.',
-        minlength: 'Last Name minimum length is 6.',
-        pattern: 'Last Name  minimum length 6, no special character !@#$%^&* no spaces.'
+        minlength: 'Last Name minimum length is 2.',
+        pattern: 'Last Name  minimum length 2, no special character.'
       },
       address: {
+        minlength: 'Last Name minimum length is 2.',
         required: 'Address is required.'
       },
       city: {
+        minlength: 'Last Name minimum length is 2.',
         required: 'City is required.'
       },
       email: {
         required: 'Email is required.',
-        email: 'Email is not properly formatted.',
+        pattern: 'Email is not properly formatted.',
       },
       phone_number: {
         required: 'Phone number is required.',
@@ -85,23 +87,50 @@ export class CustomerAccountComponent extends FormComponentBase implements OnIni
   ngOnInit() {
     this.customerForm = this.fb.group({
       first_name: ['',
-        [Validators.required,
-        Validators.minLength(2),
-        Validators.pattern('^[a-zA-Z0-9]*$')]],
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern('^[a-zA-Z]*$')
+        ]
+      ],
       last_name: ['',
-        [Validators.required,
-        Validators.minLength(2),
-        Validators.pattern('^[a-zA-Z0-9]*$')]],
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern('^[a-zA-Z]*$')
+        ]
+      ],
       gender: ['Male'],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
+      address: ['',
+        [
+          Validators.required,
+          Validators.minLength(2)
+        ]
+
+      ],
+      city: ['',
+        [
+          Validators.required,
+          Validators.minLength(2),
+        ]
+      ],
       email: ['', [
         Validators.required,
-        Validators.email]],
-      phone_number: ['', [Validators.required,
-      Validators.minLength(10),  
-      Validators.pattern("^[0-9\-\+]{10,12}$")]],
-      description: ['', Validators.required],
+        Validators.email,
+        Validators.pattern("^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$")]
+      ],
+      phone_number: ['',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.pattern("^[0-9\-\+]{10,12}$")
+        ]
+      ],
+      description: ['',
+        [
+          Validators.required,
+        ]
+      ],
       job_id: [1],
       imgUrl: []
     });
@@ -126,7 +155,7 @@ export class CustomerAccountComponent extends FormComponentBase implements OnIni
     this.customerAccountService.createCustomer(customer).subscribe();
     this.confirmRedirect();
     // this.customerForm.reset();
-   
+
   }
 
   onSelectFile(event) { // called each time file input changes
@@ -155,9 +184,9 @@ export class CustomerAccountComponent extends FormComponentBase implements OnIni
     })
   }
 
-  confirmRedirect():void{
+  confirmRedirect(): void {
     Swal.fire({
-      title: 'Success',      
+      title: 'Success',
       icon: 'success',
       showCancelButton: true,
       confirmButtonColor: '#FF7F50',
@@ -168,7 +197,7 @@ export class CustomerAccountComponent extends FormComponentBase implements OnIni
       if (result.value) {
         this.router.navigate(['/listcustomer']);
       }
-      else{
+      else {
         this.customerForm.reset();
         return;
       }

@@ -1,6 +1,8 @@
+import { FormComponentBase } from './../infrastructure/form-component-base';
+import { CrossFieldErrorMatcher } from './../infrastructure/cross-field-error-matcher';
 
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
 import Swal from 'sweetalert2';
 
@@ -18,22 +20,68 @@ import { CustomerAccountService } from '../shared/customer-account.service';
   templateUrl: './job-create.component.html',
   styleUrls: ['./job-create.component.css']
 })
-export class JobCreateComponent implements OnInit {
+export class JobCreateComponent extends FormComponentBase implements OnInit, AfterViewInit {
 
   customerList = [];
   jobForm: FormGroup;
-
+  errorMatcher = new CrossFieldErrorMatcher();
   constructor(private jobService: JobService,
-              private customerAccountService: CustomerAccountService,
-              private location: Location,
-              private fb: FormBuilder,
-              private router: Router) { }
+    private customerAccountService: CustomerAccountService,
+    private location: Location,
+    private fb: FormBuilder,
+    private router: Router) {
+    super();
+
+    this.validationMessages = {
+      job_code: {
+        required: 'Code is required.',
+        minlength: 'Code minimum length is 2.',
+        pattern: 'Code minimum length 2, no special character.'
+      },
+      job_name: {
+        required: 'Name is required.',
+        minlength: 'Name minimum length is 2.',
+      },
+      job_description: {
+        required: 'Description is required.',
+        minlength: 'Description minimum length is 2.',       
+      },
+    };
+
+    this.formErrors = {
+      job_code: '',
+      job_name: '',
+      job_description: ''
+    }
+  }
+
 
   ngOnInit() {
     this.jobForm = this.fb.group({
-      job_code: ['', Validators.required],
-      job_name: ['', Validators.required],
-      job_description: ['', Validators.required]
+      job_code: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern('^[a-zA-Z0-9]*$')
+        ]
+      ],
+
+      job_name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2)
+        ]
+      ],
+
+      job_description: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2)
+        ]
+      ]
     });
 
     this.customerAccountService.getCustomerList().subscribe(
@@ -51,15 +99,23 @@ export class JobCreateComponent implements OnInit {
       (data) => { console.log(data) }
     );
     console.log(job);
-    this.confirmRedirect();   
-    
+    this.confirmRedirect();
+
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      // this.firstItem.nativeElement.focus();
+    }, 250);
+    this.startControlMonitoring(this.jobForm);
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  
+
+
   ///Alert 
   successfully(): void {
     Swal.fire({
@@ -69,9 +125,9 @@ export class JobCreateComponent implements OnInit {
     })
   }
 
-  confirmRedirect():void{
+  confirmRedirect(): void {
     Swal.fire({
-      title: 'Success',      
+      title: 'Success',
       icon: 'success',
       showCancelButton: true,
       confirmButtonColor: '#FF7F50',
@@ -82,7 +138,7 @@ export class JobCreateComponent implements OnInit {
       if (result.value) {
         this.router.navigate(['/joblist']);
       }
-      else{
+      else {
         this.jobForm.reset();
         return;
       }

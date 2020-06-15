@@ -1604,11 +1604,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj",
+      "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj",
       "projectName": "UserManager.BAL",
-      "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj",
+      "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj",
       "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL\\obj\\",
+      "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1627,11 +1627,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj"
             },
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj"
             }
           }
         }
@@ -1653,10 +1653,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,9 @@
+C:\Me\MP\UserManager.API\UserManager.Domain\bin\Release\netstandard2.0\UserManager.Domain.deps.json
+C:\Me\MP\UserManager.API\UserManager.Domain\bin\Release\netstandard2.0\UserManager.Domain.dll
+C:\Me\MP\UserManager.API\UserManager.Domain\bin\Release\netstandard2.0\UserManager.Domain.pdb
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Release\netstandard2.0\UserManager.Domain.csprojAssemblyReference.cache
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Release\netstandard2.0\UserManager.Domain.csproj.CoreCompileInputs.cache
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Release\netstandard2.0\UserManager.Domain.AssemblyInfoInputs.cache
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Release\netstandard2.0\UserManager.Domain.AssemblyInfo.cs
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Release\netstandard2.0\UserManager.Domain.dll
+C:\Me\MP\UserManager.API\UserManager.Domain\obj\Release\netstandard2.0\UserManager.Domain.pdb

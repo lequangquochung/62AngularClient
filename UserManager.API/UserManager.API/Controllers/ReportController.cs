@@ -39,10 +39,10 @@ namespace UserManager.API.Controllers
 
         [HttpGet]
         [Route("api/export/listCustomer")]
-        public async Task<string> ExportReport()
+        public async Task<string> ExportReportCustomer()
         {
             string rootFolder = hostingEnvironment.WebRootPath;
-            string fileName = "ExportReport.xlsx";
+            string fileName = "CustomerList.xlsx";
             string downloadUrl = string.Format("{0}://{1}/{2}", Request.Scheme, Request.Host, fileName);
             FileInfo file = new FileInfo(Path.Combine(rootFolder, fileName));
             if (file.Exists)
@@ -56,47 +56,33 @@ namespace UserManager.API.Controllers
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Customer");
 
-                //FillBackGround(worksheet, 1, 1, 1, true);
-                //FillBackGround(worksheet, 2, 2, 5, true);
                 var CustomerList = customer.AllCustomer();
-                worksheet.Cells[3, 2].LoadFromCollection(CustomerList, true, TableStyles.Light19);
+                worksheet.Cells[3, 2].LoadFromCollection(CustomerList, true, TableStyles.Medium20);
                 worksheet.DeleteColumn(2);
                 worksheet.DeleteColumn(11);
                 worksheet.DefaultColWidth = 25;
+            
                 worksheet.Cells.Style.WrapText = true;
                 worksheet.Cells[1, 5].Value = $"List All  Customer :({CustomerList.Count})";
                 using (ExcelRange Rng = worksheet.Cells[1, 5, 1, 7])
                 {
+
                     Rng.Merge = true;
                     Rng.Style.Font.Bold = true;
                     Rng.Style.Font.Size = 18;
                     Rng.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    package.Save();
                 }
-
-                //ExcelWorksheet worksheet2 = package.Workbook.Worksheets.Add("joblist");               
-                //var JobList = job.JobList();
-                //worksheet2.Cells[3, 5].LoadFromCollection(JobList, true, TableStyles.Light19);
-                //worksheet2.DeleteColumn(2);
-                //worksheet2.DeleteColumn(11);
-                //worksheet2.DefaultColWidth = 25;
-                //worksheet2.Cells.Style.WrapText = true;
-                //worksheet2.Cells[1, 5].Value = $"Job List :({JobList.Count})";
-                //using (ExcelRange Rng = worksheet2.Cells[1, 5, 1, 7])
-                //{
-                //    Rng.Merge = true;
-                //    Rng.Style.Font.Bold = true;
-                //    Rng.Style.Font.Size = 18;
-                //    Rng.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                //}
-                //return downloadUrl;
+                package.Save();
             }
+            return downloadUrl;
         }
         [HttpGet]
-        [Route("api/export/JobList")]
-        public async Task<string> ExportReport()
+        [Route("api/export/joblist")]
+        public async Task<string> ExportReportJobList()
         {
             string rootFolder = hostingEnvironment.WebRootPath;
-            string fileName = "ExportReport.xlsx";
+            string fileName = "JobList.xlsx";
             string downloadUrl = string.Format("{0}://{1}/{2}", Request.Scheme, Request.Host, fileName);
             FileInfo file = new FileInfo(Path.Combine(rootFolder, fileName));
             if (file.Exists)
@@ -108,23 +94,24 @@ namespace UserManager.API.Controllers
 
             using (ExcelPackage package = new ExcelPackage(file))
             {
-                ExcelWorksheet worksheet2 = package.Workbook.Worksheets.Add("joblist");
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("joblist");
                 var JobList = job.JobList();
-                worksheet2.Cells[3, 5].LoadFromCollection(JobList, true, TableStyles.Light19);
-                worksheet2.DeleteColumn(2);
-                worksheet2.DeleteColumn(11);
-                worksheet2.DefaultColWidth = 25;
-                worksheet2.Cells.Style.WrapText = true;
-                worksheet2.Cells[1, 5].Value = $"Job List :({JobList.Count})";
-                using (ExcelRange Rng = worksheet2.Cells[1, 5, 1, 7])
+                worksheet.Cells[3, 4].LoadFromCollection(JobList, true, TableStyles.Medium20);
+                worksheet.DeleteColumn(4);
+                worksheet.DefaultColWidth = 25;
+                worksheet.Cells.Style.WrapText = true;
+                worksheet.Cells[1, 4].Value = $"Job List :({JobList.Count})";
+                using (ExcelRange Rng = worksheet.Cells[1, 4, 1, 7])
                 {
                     Rng.Merge = true;
                     Rng.Style.Font.Bold = true;
                     Rng.Style.Font.Size = 18;
                     Rng.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 }
-                return downloadUrl;
+                package.Save();
+
             }
+            return downloadUrl;
         }
 
         [HttpGet]
@@ -132,7 +119,7 @@ namespace UserManager.API.Controllers
         public async Task<string> ExportReportWithJobId(int id)
         {
             string rootFolder = hostingEnvironment.WebRootPath;
-            string fileName = "ExportReport.xlsx";
+            string fileName = "CustomerByJob.xlsx";
             string downloadUrl = string.Format("{0}://{1}/{2}", Request.Scheme, Request.Host, fileName);
             FileInfo file = new FileInfo(Path.Combine(rootFolder, fileName));
             if (file.Exists)
@@ -144,56 +131,15 @@ namespace UserManager.API.Controllers
 
             using (ExcelPackage package = new ExcelPackage(file))
             {
-                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Customer");
-
-                //FillBackGround(worksheet, 1, 1, 1, true);
-                //FillBackGround(worksheet, 2, 2, 5, true);
-                var CustomerList = customer.AllCustomer();
-                worksheet.Cells[3, 2].LoadFromCollection(CustomerList, true, TableStyles.Light19);
-                worksheet.DeleteColumn(2);
-                worksheet.DeleteColumn(11);
-                worksheet.DefaultColWidth = 25;
-                worksheet.Cells.Style.WrapText = true;
-                worksheet.Cells[1, 5].Value = $"List All  Customer :({CustomerList.Count})";
-                using (ExcelRange Rng = worksheet.Cells[1, 5, 1, 7])
-                {
-                    Rng.Merge = true;
-                    Rng.Style.Font.Bold = true;
-                    Rng.Style.Font.Size = 18;
-                    Rng.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                }
-
-                ExcelWorksheet worksheet2 = package.Workbook.Worksheets.Add("joblist");
-
-                //FillBackGround(worksheet, 1, 1, 1, true);
-                //FillBackGround(worksheet, 2, 2, 5, true);
-                var JobList = job.JobList();
-                worksheet2.Cells[3, 5].LoadFromCollection(JobList, true, TableStyles.Light19);
-                worksheet2.DeleteColumn(2);
-                worksheet2.DeleteColumn(11);
-                worksheet2.DefaultColWidth = 25;
-                worksheet2.Cells.Style.WrapText = true;
-                worksheet2.Cells[1, 5].Value = $"Job List :({JobList.Count})";
-                using (ExcelRange Rng = worksheet2.Cells[1, 5, 1, 7])
-                {
-                    Rng.Merge = true;
-                    Rng.Style.Font.Bold = true;
-                    Rng.Style.Font.Size = 18;
-                    Rng.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                }
-
-
-                //FillBackGround(worksheet, 1, 1, 1, true);
-                //FillBackGround(worksheet, 2, 2, 5, true);
-                ExcelWorksheet worksheet3 = package.Workbook.Worksheets.Add($"CustomerOfJob");
-                var CustomerByJob = customer.CustomerList(id);
-                worksheet3.Cells[3, 2].LoadFromCollection(CustomerByJob, true, TableStyles.Light19);
+                ExcelWorksheet worksheet3 = package.Workbook.Worksheets.Add("CustomerOfJob}");
+                var CustomerOfJob = customer.CustomerList(id);
+                worksheet3.Cells[3, 2].LoadFromCollection(CustomerOfJob, true, TableStyles.Medium20);
                 worksheet3.DeleteColumn(2);
                 worksheet3.DeleteColumn(11);
                 worksheet3.DeleteColumn(10);
                 worksheet3.DefaultColWidth = 25;
                 worksheet3.Cells.Style.WrapText = true;
-                worksheet3.Cells[1, 5].Value = $"Customer of Job:({CustomerList.Count})";
+                worksheet3.Cells[1, 5].Value = $"Customer of Job:({CustomerOfJob.Count})";
                 using (ExcelRange Rng = worksheet3.Cells[1, 5, 1, 7])
                 {
                     Rng.Merge = true;

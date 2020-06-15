@@ -5,10 +5,12 @@ import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
 import Swal from 'sweetalert2';
+import { ReportService } from '../shared/report.service';
 //
 import { Customer } from '../Models/customer.model';
 //service
 import { CustomerAccountService } from '../shared/customer-account.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -39,20 +41,28 @@ export class CustomerAccountListComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   dataSource = new MatTableDataSource<Customer>(this.ELEMENT_DATA);
-
   constructor(private customerAccountService: CustomerAccountService,
-    private location: Location) { }
+    private location: Location,
+    private reportService: ReportService,
+    private route: ActivatedRoute,
+  ) {
+    this.route.queryParams.subscribe(params => {
+      this.ngOnInit();
+    })
+  }
 
   ngOnInit() {
     this.customerAccountService.getCustomerList().subscribe(
-      customer => {this.dataSource.data = customer as Customer[],
-      console.log(customer)}
+      customer => {
+        this.dataSource.data = customer as Customer[]
+        // console.log(customer)
+      }
     );
-    this.dataSource.sort=this.sort;
+    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  deleteCustomer(customer_id) {  
+  deleteCustomer(customer_id) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -67,15 +77,21 @@ export class CustomerAccountListComponent implements OnInit {
           'Deleted!',
           'Your file has been deleted!',
           'success'
-        ),this.customerAccountService.deleteCustomter(customer_id).subscribe(
-          data=> {
+        ), this.customerAccountService.deleteCustomter(customer_id).subscribe(
+          data => {
             this.ngOnInit()
-          });    
+          });
       }
-    }); 
+    });
   }
 
-  apllyFilter(filterValue: string){
+  getReportJobList() {
+    this.reportService.getReportCusTomer().subscribe(
+      data => { window.open(data) }
+    );
+  }
+
+  apllyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 

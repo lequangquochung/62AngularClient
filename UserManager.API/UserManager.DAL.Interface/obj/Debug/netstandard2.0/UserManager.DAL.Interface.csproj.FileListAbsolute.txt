@@ -10,3 +10,15 @@ C:\Users\hunglqq\source\repos\UserManager.API\UserManager.DAL.Interface\obj\Debu
 C:\Users\hunglqq\source\repos\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.csproj.CopyComplete
 C:\Users\hunglqq\source\repos\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.dll
 C:\Users\hunglqq\source\repos\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.pdb
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\bin\Debug\netstandard2.0\UserManager.DAL.Interface.deps.json
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\bin\Debug\netstandard2.0\UserManager.DAL.Interface.dll
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\bin\Debug\netstandard2.0\UserManager.DAL.Interface.pdb
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\bin\Debug\netstandard2.0\UserManager.Domain.dll
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\bin\Debug\netstandard2.0\UserManager.Domain.pdb
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.csprojAssemblyReference.cache
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.csproj.CoreCompileInputs.cache
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.AssemblyInfoInputs.cache
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.AssemblyInfo.cs
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.csproj.CopyComplete
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.dll
+C:\Me\MP\UserManager.API\UserManager.DAL.Interface\obj\Debug\netstandard2.0\UserManager.DAL.Interface.pdb

@@ -1,69 +1,3 @@
-<!-- 
-<div class="container contact-form">
-  <div class="contact-image">
-      <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
-      <h2>Customer</h2>
-  </div> 
-  <form [formGroup]="customerForm" (ngSubmit)="onFormSubmit()">
-      <div class="row">
-          <div class="col-md-6">
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="First Name" formControlName="first_name" />
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="First Name" formControlName="last_name" />
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="First Name" formControlName="address" />
-              </div>
-              <div class="form-group">
-                  <select class="form-control" formControlName="job_id">
-                      <option *ngFor="let item of jobList" value="{{item.job_id}}">
-                          {{item.job_name}}
-                      </option>
-                  </select>
-              </div>
-              <div class="form-group form-check form-check-inline">                
-                  <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" value="Male" name="gender" formControlName="gender">
-                      <label class="form-check-label" for="inlineRadio1">Male</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" value="Female" name="gender" formControlName="gender">
-                      <label class="form-check-label" for="inlineRadio2">Female</label>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="City" formControlName="city" />
-              </div>
-              <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email" formControlName="email" />
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number" />
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Description" formControlName="description" />
-              </div>
-              <div class="form-group mb-3">                   
-                  <label class="custom-file-upload">
-                      <input type="file" accept="image/*" (change)="onSelectFile($event)" formControlName="imgUrl">
-                      <i class="far fa-images"></i> Choose a Photo
-                  </label>
-                  <div class="form-group mt-1">
-                      <img src="{{urlImage}}" alt="" height="80" width="90">
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="d-flex justify-content-center mt-5">
-          <button type="submit" class="btn btn-primary mt-3" [disabled]="customerForm.invalid">Submit</button>
-      </div>
-  </form>
-</div>
-<pre>{{customerForm.value | json}}</pre> -->
 <div class="container">
     <div class="row d-flex justify-content-center">
 
@@ -78,8 +12,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" required placeholder="First Name" required
-                                formControlName="first_name">
+                            <input matInput spellcheck="false" required placeholder="First Name" required formControlName="first_name">
                             <mat-error>
                                 {{ formErrors['first_name'] }}
                             </mat-error>
@@ -87,8 +20,7 @@
                     </div>
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" placeholder="Last Name" formControlName="last_name"
-                                required>
+                            <input matInput spellcheck="false" placeholder="Last Name" formControlName="last_name" required>
                             <mat-error>
                                 {{ formErrors['last_name'] }}
                             </mat-error>
@@ -145,8 +77,7 @@
                     </div>
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" placeholder="Phone Number" required
-                                formControlName="phone_number">
+                            <input matInput spellcheck="false" placeholder="Phone Number" required formControlName="phone_number">
                             <mat-error>
                                 {{ formErrors['phone_number'] }}
                             </mat-error>
@@ -157,8 +88,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" placeholder="Description" formControlName="description"
-                                required>
+                            <input matInput spellcheck="false" placeholder="Description" formControlName="description" required>
                             <mat-error>
                                 {{ formErrors['description'] }}
                             </mat-error>
@@ -172,8 +102,7 @@
                                 </span>
                             </button>
                             <!-- <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button> -->
-                            <input hidden (change)="onSelectFile($event)" accept="image/*" #fileInput type="file"
-                                formControlName="imgUrl" id="file">
+                            <input hidden (change)="onSelectFile($event)" accept="image/*" #fileInput type="file" formControlName="imgUrl" id="file">
                             <div class="form-group mt-1">
                                 <img src="{{urlImage}}" alt="" height="80" width="100">
                             </div>
@@ -185,14 +114,11 @@
                         <!-- <button type="submit" class="btn btn-primary mt-3" [disabled]="customerForm.invalid">
                             Submit
                         </button> -->
-                        <button type="submit" class="btn btn-primary mt-1" mat-raised-button color="primary"
-                            [disabled]="customerForm.invalid">
+                        <button type="submit" class="btn btn-primary mt-1" mat-raised-button color="primary" [disabled]="customerForm.invalid">
                             Submit
                         </button>
 
-                        <button type="button" class="btn btn-danger mt-3 ml-2" (click)="cancel()" mat-raised-button
-                            color="warn"
-                            >Back
+                        <button type="button" class="btn btn-danger mt-3 ml-2" (click)="cancel()" mat-raised-button color="warn">Back
                         </button>
 
                     </div>
@@ -201,5 +127,4 @@
         </div>
     </div>
 </div>
-<pre>{{customerForm.value | json}}</pre>
-
+<!-- <pre style="color: white;">{{customerForm.value | json}}</pre> -->

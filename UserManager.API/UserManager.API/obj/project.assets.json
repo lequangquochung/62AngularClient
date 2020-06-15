@@ -13561,11 +13561,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.API\\UserManager.API.csproj",
+      "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.API\\UserManager.API.csproj",
       "projectName": "UserManager.API",
-      "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.API\\UserManager.API.csproj",
+      "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.API\\UserManager.API.csproj",
       "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.API\\obj\\",
+      "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13584,20 +13584,20 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL.Interface\\UserManager.BAL.Interface.csproj"
             },
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.BAL\\UserManager.BAL.csproj"
             },
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj"
             },
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj"
             },
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.Domain\\UserManager.Domain.csproj"
             }
           }
         }
@@ -13642,10 +13642,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

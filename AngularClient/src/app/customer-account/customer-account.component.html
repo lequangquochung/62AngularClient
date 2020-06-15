@@ -91,8 +91,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" required placeholder="First Name" required
-                                formControlName="first_name">
+                            <input matInput spellcheck="false" required placeholder="First Name" required formControlName="first_name">
                             <mat-error>
                                 {{ formErrors['first_name'] }}
                             </mat-error>
@@ -100,8 +99,7 @@
                     </div>
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" placeholder="Last Name" formControlName="last_name"
-                                required>
+                            <input matInput spellcheck="false" placeholder="Last Name" formControlName="last_name" required>
                             <mat-error>
                                 {{ formErrors['last_name'] }}
                             </mat-error>
@@ -158,8 +156,7 @@
                     </div>
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" placeholder="Phone Number" required
-                                formControlName="phone_number">
+                            <input matInput spellcheck="false" placeholder="Phone Number" required formControlName="phone_number">
                             <mat-error>
                                 {{ formErrors['phone_number'] }}
                             </mat-error>
@@ -170,8 +167,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <mat-form-field>
-                            <input matInput spellcheck="false" placeholder="Description" formControlName="description"
-                                required>
+                            <input matInput spellcheck="false" placeholder="Description" formControlName="description" required>
                             <mat-error>
                                 {{ formErrors['description'] }}
                             </mat-error>
@@ -185,8 +181,7 @@
                                 </span>
                             </button>
                             <!-- <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button> -->
-                            <input hidden (change)="onSelectFile($event)" accept="image/*" #fileInput type="file"
-                                formControlName="imgUrl" id="file">
+                            <input hidden (change)="onSelectFile($event)" accept="image/*" #fileInput type="file" formControlName="imgUrl" id="file">
                             <div class="form-group mt-1">
                                 <img src="{{urlImage}}" alt="" height="80" width="90">
                             </div>
@@ -198,14 +193,12 @@
                         <!-- <button type="submit" class="btn btn-primary mt-3" [disabled]="customerForm.invalid">
                             Submit
                         </button> -->
-                        <button type="submit" class="btn btn-primary mt-3" mat-raised-button color="primary"
-                            [disabled]="customerForm.invalid">
+                        <button type="submit" class="btn btn-primary mt-3" mat-raised-button color="primary" [disabled]="customerForm.invalid">
                             Submit
                         </button>
 
-                        <button type="button" class="btn btn-danger mt-3 ml-2" (click)="cancel()" mat-raised-button
-                            color="warn"
-                            >Delete
+                        <button type="button" class="btn btn-danger mt-3 ml-2" (click)="cancel()" mat-raised-button color="warn">
+                            Cancel
                         </button>
 
                     </div>
@@ -214,4 +207,4 @@
         </div>
     </div>
 </div>
-<!-- <pre>{{customerForm.value | json}}</pre> -->
+<!-- <pre style="color:white;">{{customerForm.value | json}}</pre> -->

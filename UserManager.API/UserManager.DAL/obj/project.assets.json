@@ -1567,11 +1567,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj",
+      "projectUniqueName": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj",
       "projectName": "UserManager.DAL",
-      "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj",
+      "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\UserManager.DAL.csproj",
       "packagesPath": "C:\\Users\\hunglqq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL\\obj\\",
+      "outputPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1590,8 +1590,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj": {
-              "projectPath": "C:\\Users\\hunglqq\\source\\repos\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj"
+            "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj": {
+              "projectPath": "C:\\Me\\MP\\UserManager.API\\UserManager.DAL.Interface\\UserManager.DAL.Interface.csproj"
             }
           }
         }
@@ -1621,10 +1621,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

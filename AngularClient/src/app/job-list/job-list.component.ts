@@ -41,8 +41,11 @@ export class JobListComponent implements OnInit {
 
   ngOnInit() {
     this.jobService.getJobList().subscribe(
-      Subdata => {this.dataSource.data = Subdata as Job[],
-      console.log(Subdata)});
+      Subdata => {
+        this.dataSource.data = Subdata as Job[]
+        // console.log(Subdata)
+      }
+    );
     
     
 
@@ -70,9 +73,12 @@ export class JobListComponent implements OnInit {
       }
     })  
   }
+  // get Report
 
-  getReportCusTomer () {
-    this.reportService.getReportCusTomer().subscribe();
+  getReportJobList(){
+    this.reportService.getReportJobList().subscribe(
+      data => {window.open(data)}
+      );
   }
 
   apllyFilter(filterValue: string) {

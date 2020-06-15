@@ -1,0 +1,12 @@
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\bin\Release\netstandard2.0\UserManager.BAL.Interface.deps.json
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\bin\Release\netstandard2.0\UserManager.BAL.Interface.dll
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\bin\Release\netstandard2.0\UserManager.BAL.Interface.pdb
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\bin\Release\netstandard2.0\UserManager.Domain.dll
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\bin\Release\netstandard2.0\UserManager.Domain.pdb
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\obj\Release\netstandard2.0\UserManager.BAL.Interface.csprojAssemblyReference.cache
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\obj\Release\netstandard2.0\UserManager.BAL.Interface.csproj.CoreCompileInputs.cache
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\obj\Release\netstandard2.0\UserManager.BAL.Interface.AssemblyInfoInputs.cache
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\obj\Release\netstandard2.0\UserManager.BAL.Interface.AssemblyInfo.cs
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\obj\Release\netstandard2.0\UserManager.BAL.Interface.csproj.CopyComplete
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\obj\Release\netstandard2.0\UserManager.BAL.Interface.dll
+C:\Me\MP\UserManager.API\UserManager.BAL.Interface\obj\Release\netstandard2.0\UserManager.BAL.Interface.pdb
